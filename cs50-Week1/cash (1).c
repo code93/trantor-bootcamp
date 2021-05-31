@@ -9,9 +9,9 @@
 int main(void)
 {
 
-float owed = getValue();
-int cents = round(owed * 100);
-printf("%d\n", coins(cents));
+    float owed = getValue();
+    int cents = round(owed * 100);
+    printf("%d\n", coins(cents));
 
 }
 
@@ -24,7 +24,7 @@ float getValue(void)
         change = get_float("Change owed: ");
     }
     while (change < 0.00);
-return change;
+    return change;
 }
 
 int coins(int cents)
