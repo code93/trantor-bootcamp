@@ -1,6 +1,6 @@
 # Requirements
 
-# Brain dump Dection
+# Brain dump Section
 
 # Features Section
 
