@@ -1,0 +1,83 @@
+Pages:
+
+(1.) Homepage
+(2.) Dashboard Page: User's Village Page Editing and other interaction with other pages
+(3.) Personal Village Page/Space
+(4.) Global Village Page/Space
+(5.) Help Page Forumn
+
+Global Village Space (No's 4) will have links to all Personal Vilage Pages.
+Homepage tells about this part of cyberspace (website) allowing people to being able to
+(I) Communicate, (II) Form Communitues, (III) Develop a new way of thinking (building approproate features and using them while allowing
+for others to build features as well which integrates together under the Global village Page.)
+and also be able to bring the users to take advantage of Social Media to be linked together towards an aim that the Collaborated Personal 
+Vilage Space Users have in mind.
+
+
+Dashboard Page is the Editing Page that requires Sign Up or Login to be able to build Personal Village Space.
+
+Each personal Village Space will have it's own set of features built by the user:
+For Example:
+	A User Decides to build the following set of Features;
+		(*) One's Own Portfolio
+		(*) Personal Discussion Forumn
+		(*) A Social Media Page to allow other users visiting this page to Chat with others on the Page
+		(*) Features x,y,z bulit by the user using Dashboard for the Purpose a,b,c
+
+
+Global village will be an integration of all the Personal Villages:
+	It will include Integration of all the User features:
+		(*) List of Portfolio's Grouped and named as a Village, visiting which will result in looking at the Portfolio
+				linked by maps or some other interactive feature.
+		(*) List of Discussion Forumns with Statistics of Active Users and whhat kind of Discussion is taking Place
+				linked by maps or some other interactive feature.
+		(*) List of Social Media Pages linked by maps or some other interactive feature ...
+		(*) Global Village linking all the Village Pages together like a game map where each user have been allocated a location or
+			set of coordinates and time according to their own time in Real World(UTC+-Time).
+		(*) Features x,y,z Global linked together as a list of maps 
+
+
+Help Page Forumn will have General Help Discussions and other Help Discussions by different users to suggest changes as the Contact the developers
+page will be included in this and/or Help Queries Solving one another's Problems.
+
+
+What the developers of this Page have in mind and what will the Page look like:
+
+	It will be based on LambdaMOO VR Space but 3D Graphical and Realistic Utility Space involving User Interactions where anyone
+can build their own Social Media Feature like Individual facebooks(or Reddit like forumns with individual tastes) which come together 
+to form Global Social Media Space or Global Facebook(global Village Space).It will be open Source and anyone on github can take 
+the code to build towards this end.
+
+
+Minimum Requirements 0.1:
+(*) Initially there will be just One feature and that of Portfolio feature of one single User.
+(*) Dashboard will be the editing Page for the Portfolio feature.
+(*) Personal Village Page will Display the Portfolio Page.
+(*) homepage will be the About Section
+(*) Global Village Space/ Page and Help Page will tell what is to be expected in the future Versions of the Page.
+
+
+Minimum Req. Version 0.2:
+(*) It will involve Multiple People's Portfolio
+(*) Dashboard will have Sign Up or Login Feature along with editing of Portfolio and Storing it in Database of every User.
+(*) Global Village Space will be used to display Portfolio's Initially by Ascending Order of Names. (which in later
+	versions can use Map like allocated coordinates of users to find a specific portfolio by 3D Radar like animation)
+(*) Homepage Will be the About Section
+(*) Personal village Page will be one Users Particular Portfolio fetched by the Key allocated in table of database.
+
+Minimum Req. Version 0.3:
+(*) It will involve Two Features => (i) Portfolio, (ii) Blog Page
+
+
+Further Versions will allow users to be able to build features themselves.
+
+To be done:
+(i) Deciding what the individual Pages look like and what basic features will they have initially.
+(ii) Layout, tables of Relational Database these Minimum Requirement Versions 0.1 to 0.3 will have.
+(iii) All the Minimum Versions expected to make it more and more alike to the expectations of what the site will look like in the end.
+(iv) Visual Representation of what the site will look at one initial Stage or Version of the Project and 
+	what it will look like at the end of the Project.
+(V) What Technologies will be required and how it will be required to build a solution of this Project
+(Vi) Time Estimation for Each Minimum Requirement Version to be built.
+(vii) (Space for something that comes along while working on the project)  
+
