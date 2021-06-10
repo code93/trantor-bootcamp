@@ -1,0 +1,52 @@
+Co-ordinate X, Y and Z are specific for specific users to allocate their username on the Map 
+which can be zoomed in and out and therefore a third coordinate.
+
+Dashboard ID is the key for the Dashoboard editing subpage that allows to edit Features like 
+Posts, Portfolio's, etc to be edited and in future versions of this to create features.
+
+Features ID is the key linking all the features like Posts and Portfolio's by their keys.
+
+Post ID is the key for the Posts of a User to be linked by.
+
+Each User has an ID which is the main key to that partiular user to which relationships in Database(or kind)
+can be created.
+
+
+The Tables are as follows:
+
+(1) User Table
+	(i) ID
+	(ii) Email
+	(iii) Username
+	(iv) Password
+
+(2) GameMap Table (/* It is called game map as Map might confuse or complicate things later on**/)
+	(i) Co-ordinate ID
+	(ii) Co-ordinate X
+	(iii) Co-ordinate Y
+	(iv) Co-ordinate Z
+	
+
+(3) Mega Features Table(/* mega is used to not to be confused with features like buttons and kind)
+	(i) Features ID
+	(ii) Posts
+	(iii) Portfolios
+
+(4) Dashboard Table
+	(i) Dashboard ID (Since A page will be allocated to user editing and vieweing all the MEga features)
+	(ii) Dashboard Features (Reason for such Table: Each User will be having their own Arrangements and Mega Features...)
+
+(5) Posts Table
+	(i) Post ID
+	(ii) Posts
+
+(6) Portfolio Table
+	(i) Portfolio ID
+	(ii) Portfolios
+
+
+
+
+
+
+   
