@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<section>
+    <nav>
+      <ul>
+        <li><a href="./Homepage">HomePage</a></li>  
+        <li><a href="./Signup">Sign Up</a></li>
+        <li><a href="./Login">Login</a></li>
+        <li><a href="./Contact">Contact ME</a></li>
+      </ul>
+    </nav>
+    
+    <article>
+      <h1>About</h1>
+      <p>After all, the primary challenge is not so much in the 
+        hardware, or the physical form of the systems of 
+        intercommunication and interaction around which society develops.  
+        The important work is in developing the social forms of use of 
+        this technology which forwards the common good as well as that of 
+        the individual.  New ways of thinking, as Einstein said, are the 
+        urgently needed ingredient for the humanization and survival of 
+        society. </p>
+      <p>This Website Aims on developing Interactive LambdaMOO like virtual Space
+          that not only allows Communication and formation of Communities but also
+          allows Real Utilities which can be developed by the Users themselves as Features,
+          to be able to make their own Virtual Spaces linked together to a Global Virtual Space. 
+      </p>
+    </article>
+  </section>
+  <form action="/register" method="post">
+
+    <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+    <select name="sport">
+        <option disabled selected value="">Sport</option>
+        {% for sport in sports %}
+            <option value="{{ sport }}">{{ sport }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Register">
+    
+
+</form>
+
+   
+{% endblock %}

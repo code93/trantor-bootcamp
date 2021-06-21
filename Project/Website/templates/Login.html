@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block Login %}
+<div>
+  <h1 style="color: white;">Login</h1>
+  <form action="/action_page.php">
+
+    <label for="email", style="color: whitesmoke;">Email:</label><br>
+    <input type="email" id="email" name="lname" value="Email"><br><br>
+    <label for="password", style="color: whitesmoke;">Password</label><br>
+    <input type="password" id="password" name="password" value="Password"><br><br>
+    <input type="submit" value="Submit">
+  </form> 
+</div>
+
+{% endblock %}
