@@ -29,19 +29,7 @@
       </p>
     </article>
   </section>
-  <form action="/register" method="post">
-
-    <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
-    <select name="sport">
-        <option disabled selected value="">Sport</option>
-        {% for sport in sports %}
-            <option value="{{ sport }}">{{ sport }}</option>
-        {% endfor %}
-    </select>
-    <input type="submit" value="Register">
-    
-
-</form>
+  
 
    
 {% endblock %}

@@ -6,22 +6,15 @@ app = Flask(__name__)
 
 conn=sqlite3.connect("froshims.db",check_same_thread=False)
 cur= conn.cursor()
-cur.execute('''CREATE TABLE IF NOT EXISTS registrants(name TEXT, sport TEXT)''')
+cur.execute('''CREATE TABLE IF NOT EXISTS registrants(email TEXT, password TEXT)''')
 conn.commit()
 
 
 
-SPORTS = [
-    "Dodgeball",
-    "Flag Football",
-    "Soccer",
-    "Volleyball",
-    "Ultimate Frisbee"
-]
 
 @app.route("/")
 def index():
-    return render_template("index.html", sports=SPORTS)
+    return render_template("index.html")
 
 @app.route("/Homepage")
 def Homepage():
@@ -46,19 +39,17 @@ def Contact():
 @app.route("/register", methods=["POST"])
 def register():
 
-    name = request.form.get("name")
-    if not name:
-        return render_template("error.html", message="Missing name")
-
-    sport = request.form.get("sport")
-    if not sport:
-        return render_template("error.html", message="Missing sport")
-    if sport not in SPORTS:
-        return render_template("error.html", message="Invalid sport")
-
-    df = (name,sport)
+    email = request.form.get("email")
+    if not email:
+        return render_template("error.html", message="Missing Email")
     
-    cur.execute('''INSERT INTO registrants(name,sport) VALUES(?,?)''', df)
+    password = request.form.get("password")
+    if not password:
+        return render_template("error.html", message="Missing Password")
+
+    df = (email, password)
+    
+    cur.execute('''INSERT INTO registrants(email,password) VALUES(?,?)''', df)
 
     return redirect("/registrants")
 
@@ -66,4 +57,4 @@ def register():
 @app.route("/registrants")
 def registrants():
     registrants = cur.execute('''SELECT * FROM registrants''')
-    return render_template("registrants.html", registrants=registrants)
+    return render_template("success.html", message="you are Logged IN!")
