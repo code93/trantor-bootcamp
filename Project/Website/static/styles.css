@@ -1,6 +1,7 @@
 body {
-    background-image: linear-gradient(to right, rgb(0,0,0) ,rgb(255,255,255));
+    background-image: linear-gradient(to right, crimson , navy);
     align-items: center;
+    padding: 20px;
 }
 
 .center {
@@ -17,11 +18,12 @@ body {
   
   /* Style the header */
   header {
-    background-color: #666;
-    padding: 30px;
+    background-image: radial-gradient(red, blue);
+    box-shadow: darkcyan;
+    padding: 10px;
     text-align: center;
     font-size: 35px;
-    color: white;
+    color: ghostwhite;
   }
   
   /* Create two columns/boxes that floats next to each other */
@@ -29,13 +31,15 @@ body {
     float: left;
     width: 30%;
     height: 300px; /* only for demonstration, should be removed */
-    background: #ccc;
+    color: whitesmoke;
+    scrollbar-highlight-color: whitesmoke;
     padding: 20px;
   }
   
   /* Style the list inside the menu */
   nav ul {
     list-style-type: none;
+    background-color: rgb(238, 192, 159);
     padding: 0;
   }
   
@@ -43,7 +47,7 @@ body {
     float: left;
     padding: 20px;
     width: 70%;
-    background-color: #f1f1f1;
+    background-color: whitesmoke;
     height: 300px; /* only for demonstration, should be removed */
   }
   
@@ -56,10 +60,13 @@ body {
   
   /* Style the footer */
   footer {
-    background-color: #777;
+    background-color: #2E8B57;
+    box-shadow: darkcyan;
     padding: 10px;
     text-align: center;
-    color: white;
+    font-size: 35px;
+    color: ghostwhite;
+  
   }
   
   /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
