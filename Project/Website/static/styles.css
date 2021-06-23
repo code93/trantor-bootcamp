@@ -1,6 +1,12 @@
-body {
+#bg {
     background-image: linear-gradient(to right, crimson , navy);
     padding: 20px;
+}
+
+body {
+  background-image: url("green code.jpg");
+  background-repeat: round;
+  opacity: 0.8;
 }
 
 .center {
