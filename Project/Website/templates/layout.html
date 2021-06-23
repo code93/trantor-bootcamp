@@ -3,19 +3,34 @@
 <head>
     <meta name="viewport" content="initial-scale=1, width=device-width">
     <link rel="stylesheet" href="../static/styles.css">
-    <title>Page Title</title>
+    <link rel="icon" href="../static/anonymous logo.jpg" type="image/icon type">
+    <title>Cyberspace Gateway</title>
 </head>
-<body>
+<div>
+  <nav>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="Homepage">Homepage</a>
+      <a href="login">Login</a>
+      <a href="register">Sign Up</a>
+      <a href="blogs">Blogs</a>
+      <a href="Contact">Contact</a>
+    </div>
+    
+    <!-- Use any element to open the sidenav -->
+    <span onclick="openNav()">open</span>
+    
+  </nav>
+  <body>
 
     
     <header>
       <h2>Header</h2>
     </header>
-
-    
     {% block Homepage %}{% endblock %}
-    {% block Signup %}{% endblock %}
-    {% block Login %}{% endblock %} 
+    {% block register %}{% endblock %}
+    {% block login %}{% endblock %}
+   
     {% block body %}{% endblock %}
     <footer>
       <p>All rights Reserved @2021</p>
@@ -23,4 +38,16 @@
     
     </body>
 </div>
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
+
+
+
 </html>

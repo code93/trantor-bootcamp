@@ -1,6 +1,5 @@
 body {
     background-image: linear-gradient(to right, crimson , navy);
-    align-items: center;
     padding: 20px;
 }
 
@@ -18,45 +17,36 @@ body {
   
   /* Style the header */
   header {
-    background-image: radial-gradient(red, blue);
-    box-shadow: darkcyan;
+    background-image: radial-gradient(black, white);
+    
+    box-shadow: black;
     padding: 10px;
+    top: 0px;
     text-align: center;
-    font-size: 35px;
+    font-size: 20px;
     color: ghostwhite;
+
+    height: 100px;
   }
   
   /* Create two columns/boxes that floats next to each other */
-  nav {
-    float: left;
-    width: 30%;
-    height: 300px; /* only for demonstration, should be removed */
-    color: whitesmoke;
-    scrollbar-highlight-color: whitesmoke;
-    padding: 20px;
-  }
+  
   
   /* Style the list inside the menu */
-  nav ul {
-    list-style-type: none;
-    background-color: rgb(238, 192, 159);
-    padding: 0;
-  }
-  
+
   article {
-    float: left;
-    padding: 20px;
-    width: 70%;
+    
+    color: black;
     background-color: whitesmoke;
-    height: 300px; /* only for demonstration, should be removed */
+    background-image: url("Phoenix text background.jpg");
+    background-size: contain;
+    background-repeat: round;
+    text-decoration: black;
+
   }
   
   /* Clear floats after the columns */
-  section::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+ 
   
   /* Style the footer */
   footer {
@@ -69,10 +59,54 @@ body {
   
   }
   
-  /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-  @media (max-width: 600px) {
-    nav, article {
-      width: 100%;
-      height: auto;
-    }
-  }
+ 
+
+  /* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
