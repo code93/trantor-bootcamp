@@ -2,41 +2,43 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="initial-scale=1, width=device-width">
-    <link rel="stylesheet" href="../static/styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="icon" href="../static/anonymous logo.jpg" type="image/icon type">
+    
     <title>Cyberspace Gateway</title>
 </head>
-<div id="bg">
-  <nav>
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="Homepage">Homepage</a>
-      <a href="login">Login</a>
-      <a href="register">Sign Up</a>
-      <a href="blogs">Blogs</a>
-      <a href="Contact">Contact</a>
+<div class="container">
+<div class="jumbotron text-center">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Cyberspace Gateway</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="Homepage">Homepage</a></li>
+        <li> <a href="login">Login</a></li>
+        <li><a href="register">Sign Up</a></li>
+        <li><a href="blogs">Blogs</a></li>
+        <li><a href="Contact">Contact</a></li>
+      </ul>    
     </div>
-    
-    <!-- Use any element to open the sidenav -->
-    <span onclick="openNav()">open</span>
-    
+  
   </nav>
   <body>
 
-    
-    <header>
-      <h2>Header</h2>
-    </header>
     {% block Homepage %}{% endblock %}
     {% block register %}{% endblock %}
     {% block login %}{% endblock %}
    
     {% block body %}{% endblock %}
-    <footer>
-      <p>All rights Reserved @2021</p>
-    </footer>
-    
+ 
     </body>
+</div>
 </div>
 <script>
   function openNav() {

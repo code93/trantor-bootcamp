@@ -1,6 +1,7 @@
 #bg {
     background-image: linear-gradient(to right, crimson , navy);
     padding: 20px;
+    background-size: cover;
 }
 
 body {
