@@ -11,20 +11,18 @@
     
     <title>Cyberspace Gateway</title>
 </head>
-<div class="container">
+<div class="container-fluid">
 <div class="jumbotron text-center">
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">Cyberspace Gateway</a>
+        <a class="navbar-brand" href="Homepage">Cyberspace Gateway</a>
       </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="Homepage">Homepage</a></li>
-        <li> <a href="login">Login</a></li>
-        <li><a href="register">Sign Up</a></li>
-        <li><a href="blogs">Blogs</a></li>
-        <li><a href="Contact">Contact</a></li>
+      <ul class="nav navbar-nav ">
+        {% if not current_user.is_authenticated %} <li class="active"> <a href="login">Login</a></li>{% endif %}
+        {% if current_user.is_authenticated %}<li><a href="dashboard"></span>Dashboard</a></li>{% endif %}
+        {% if current_user.is_authenticated %}<li><a href="logout"><span class="glyphicon glyphicon-user"></span>Logout</a></li>{% endif %}
+        
       </ul>    
     </div>
   
@@ -34,10 +32,17 @@
     {% block Homepage %}{% endblock %}
     {% block register %}{% endblock %}
     {% block login %}{% endblock %}
-   
+    {% block dashboard %}{% endblock %}
     {% block body %}{% endblock %}
  
     </body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <div class="container-fluid">
+       <h3> contact me:  shubhambirmi@hotmail.com </h3>
+      </div>
+    </nav>
+
 </div>
 </div>
 <script>

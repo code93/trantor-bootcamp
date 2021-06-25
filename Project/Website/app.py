@@ -24,23 +24,23 @@ login.login_view = 'login'
 def create_all():
     db.create_all()
      
-@app.route('/blogs')
+@app.route('/dashboard')
 @login_required
 def blog():
-    return render_template('blogs.html')
+    return render_template('dashboard.html')
  
  
 @app.route('/login', methods = ['POST', 'GET'])
 def login():
     if current_user.is_authenticated:
-        return redirect('/blogs')
+        return redirect('/dashboard')
      
     if request.method == 'POST':
         email = request.form['email']
         user = UserModel.query.filter_by(email = email).first()
         if user is not None and user.check_password(request.form['password']):
             login_user(user)
-            return redirect('/blogs')
+            return redirect('/dashboard')
      
     return render_template('login.html')
  
@@ -68,13 +68,13 @@ def register():
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect('/blogs')
+    return redirect('/')
 
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("Homepage.html")
 
 @app.route("/Homepage")
 def Homepage():
