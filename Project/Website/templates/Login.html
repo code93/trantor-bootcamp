@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block login %}
+
+<div class="container">
+    <h2>Login</h2>
+<form class="form-horizontal" action="" method = "POST">
+
+    <div class="form-group">
+        
+            <input type = "email" name = "email" placeholder="Email"/>
+    </div> 
+    <div class="form-group">
+
+            <input type = "password" name = "password" placeholder="Email"/>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+</form>
+ 
+<h3>Dont Have an account??</h3>
+<h3><a href = "{{url_for('register') }}">Register Here</a></h3>
+</div>
+{% endblock %}

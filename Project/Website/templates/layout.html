@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" href="../static/anonymous logo.jpg" type="image/icon type">
+    
+    <title>Cyberspace Gateway</title>
+</head>
+<div class="container">
+<div class="jumbotron text-center">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Cyberspace Gateway</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="Homepage">Homepage</a></li>
+        <li> <a href="login">Login</a></li>
+        <li><a href="register">Sign Up</a></li>
+        <li><a href="blogs">Blogs</a></li>
+        <li><a href="Contact">Contact</a></li>
+      </ul>    
+    </div>
+  
+  </nav>
+  <body>
+
+    {% block Homepage %}{% endblock %}
+    {% block register %}{% endblock %}
+    {% block login %}{% endblock %}
+   
+    {% block body %}{% endblock %}
+ 
+    </body>
+</div>
+</div>
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
+
+
+
+</html>
