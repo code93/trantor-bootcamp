@@ -1,10 +1,286 @@
 {% extends "layout.html" %}
 {% block dashboard %}
-<div>
+<div class="container-fluid">  
 <h2>Welcome to the Dashboard</h2>
  
 <h3>Hi {{ current_user.username }}</h3>
+<div>
+    <h1>The map and area elements</h1>
+    
+    <p>Click on the computer, the phone, or the cup of coffee to go to a new page and read more about the topic:</p>
+    
+    <img src="../static/workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+    
+    <map name="workmap">
+      <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer">
+      <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone">
+      <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee">
+    </map>
+</div>
+
+
+<div class="card d-flex">
+    <div class="card-body">
+      <!--Table-->
+      <table class="table-responsive">
+      </table>
+      <table class="table table-hover table-forum text-center">
+        <!--Table head-->
+        <thead>
+          <tr>
+            <th class="text-center">Recent</th>
+          </tr>
+        </thead>
+        <!--Table head-->
+        <!--Table body-->
+        <tbody>
+          <tr>
+           
+            <td class="text-start">
+              <a href="#" class="font-weight-bold blue-text">
+                Styling in the Shadow DOM With CSS Shadow Parts
+              </a>
+              <div class="my-2">
+                <a href="#" class="blue-text">
+                  <strong>MDBootstrap</strong>
+                </a>
+                <span class="badge bg-secondary mx-1">staff</span><span
+                  class="badge bg-primary mx-1">pro</span><span
+                  class="badge bg-warning mx-1">premium</span>
+                <span>a year ago</span>
+                <div></div>
+              </div>
+            </td>
+           
+          </tr>
+
+
+          <tr>
+           
+            <td class="text-start">
+              <a href="#" class="font-weight-bold blue-text">
+                5 obscure HTTP methods to impress your hipster friends </a>
+              <div class="my-2">
+                <a href="#" class="blue-text">
+                  <strong>MDBootstrap</strong>
+                </a>
+                <span class="badge bg-secondary mx-1">staff</span><span
+                  class="badge bg-primary mx-1">pro</span><span
+                  class="badge bg-warning mx-1">premium</span>
+                <span>a year ago</span>
+              </div>
+              <div></div>
+            </td>
+            
+          </tr>
+          <tr>
+           
+            <td class="text-start">
+              <a href="#" class="font-weight-bold blue-text">
+                Tips for Writing Animation Code Efficiently </a>
+              <div class="my-2">
+                <a href="#" class="blue-text">
+                  <strong>MDBootstrap</strong>
+                </a>
+                <span class="badge bg-secondary mx-1">staff</span><span
+                  class="badge bg-primary mx-1">pro</span><span
+                  class="badge bg-warning mx-1">premium</span>
+                <span>a year ago</span>
+              </div>
+              <div></div>
+            </td>
+            
+          </tr>
+          <tr>
+            
+            <td class="text-start">
+              <a href="#" class="font-weight-bold blue-text">
+                Rolling With The Punches: Shifting Attack Tactics &amp; Dropping Packets Faster
+                &amp;
+                Cheaper At The Edge </a>
+              <div class="my-2">
+                <a href="#" class="blue-text">
+                  <strong>MDBootstrap</strong>
+                </a>
+                <span class="badge bg-secondary mx-1">staff</span><span
+                  class="badge bg-primary mx-1">pro</span><span
+                  class="badge bg-warning mx-1">premium</span>
+                <span>a year ago</span>
+              </div>
+              <div></div>
+            </td>
+            
+          </tr>
+          <tr>
+           
+            <td class="text-start">
+              <a href="#" class="font-weight-bold blue-text">
+                Internship Experience: Cryptography Engineer </a>
+              <div class="my-2">
+                <a href="#" class="blue-text">
+                  <strong>MDBootstrap</strong>
+                </a>
+                <span class="badge bg-secondary mx-1">staff</span><span
+                  class="badge bg-primary mx-1">pro</span><span
+                  class="badge bg-warning mx-1">premium</span>
+                <span>a year ago</span>
+              </div>
+              <div></div>
+            </td>
+        
+          </tr>
+          <tr>
+            
+            <td class="text-start">
+              <a href="#" class="font-weight-bold blue-text">
+                egghead: Nader Dabit - Full Stack Development in the Era of Serverless Computing
+              </a>
+              <div class="my-2">
+                <a href="#" class="blue-text">
+                  <strong>MDBootstrap</strong>
+                </a>
+                <span class="badge bg-secondary mx-1">staff</span><span
+                  class="badge bg-primary mx-1">pro</span><span
+                  class="badge bg-warning mx-1">premium</span>
+                <span>a year ago</span>
+              </div>
+              <div></div>
+            </td>
+            
+          </tr>
+          <tr>
+            
+            <td class="text-start">
+              <a href="#" class="font-weight-bold blue-text">
+                10 Interesting JavaScript and CSS Libraries for April 2020 </a>
+              <div class="my-2">
+                <a href="#" class="blue-text">
+                  <strong>MDBootstrap</strong>
+                </a>
+                <span class="badge bg-secondary mx-1">staff</span><span
+                  class="badge bg-primary mx-1">pro</span><span
+                  class="badge bg-warning mx-1">premium</span>
+                <span>a year ago</span>
+              </div>
+              <div></div>
+            </td>
+           
+          </tr>
+          <tr>
+            
+            <td class="text-start">
+              <a href="#" class="font-weight-bold blue-text">
+                bash: Split a String into Parts with `cut` in Bash </a>
+              <div class="my-2">
+                <a href="#" class="blue-text">
+                  <strong>MDBootstrap</strong>
+                </a>
+                <span class="badge bg-secondary mx-1">staff</span><span
+                  class="badge bg-primary mx-1">pro</span><span
+                  class="badge bg-warning mx-1">premium</span>
+                <span>a year ago</span>
+              </div>
+              <div></div>
+            </td>
+            
+          </tr>
+          <tr>
+            
+            <td class="text-start">
+              <a href="#" class="font-weight-bold blue-text">
+                Node v10.20.1 (LTS) </a>
+              <div class="my-2">
+                <a href="#" class="blue-text">
+                  <strong>MDBootstrap</strong>
+                </a>
+                <span class="badge bg-secondary mx-1">staff</span><span
+                  class="badge bg-primary mx-1">pro</span><span
+                  class="badge bg-warning mx-1">premium</span>
+                <span>a year ago</span>
+              </div>
+              <div></div>
+            </td>
+            
+          </tr>
+          <tr>
+           
+            <td class="text-start">
+              <a href="#" class="font-weight-bold blue-text">
+                React Digest Issue #247 </a>
+              <div class="my-2">
+                <a href="#" class="blue-text">
+                  <strong>MDBootstrap</strong>
+                </a>
+                <span class="badge bg-secondary mx-1">staff</span><span
+                  class="badge bg-primary mx-1">pro</span><span
+                  class="badge bg-warning mx-1">premium</span>
+                <span>a year ago</span>
+              </div>
+              <div></div>
+            </td>
+            
+          </tr>
+        </tbody>
+        <!--Table body-->
+      </table>
  
+      <!-- Table -->
+  
+      <!--Bottom Table UI-->
+      <div class="d-flex justify-content-center">
+        <!--Pagination -->
+        <nav class="my-2 pt-2">
+          <ul class="pagination pagination-circle pg-info mb-0">
+            <!--First-->
+            <li class="page-item clearfix d-none d-md-block">
+              <a href="#" class="page-link waves-effect">
+                First </a>
+            </li>
+            <!--Arrow left-->
+            <li class="page-item">
+              <a href="#" class="page-link waves-effect" aria-label="Previous">
+                <span aria-hidden="true">«</span>
+                <span class="sr-only">
+                  Previous </span>
+              </a>
+            </li>
+            <!--Numbers-->
+            <li class="page-item">
+              <a href="#" class="page-link waves-effect">11</a>
+            </li>
+            <li class="page-item">
+              <a href="#" class="page-link waves-effect">12</a>
+            </li>
+            <li class="page-item active">
+              <a href="#" class="page-link waves-effect">13</a>
+            </li>
+            <li class="page-item">
+              <a href="#" class="page-link waves-effect">14</a>
+            </li>
+            <li class="page-item">
+              <a href="#" class="page-link waves-effect">15</a>
+            </li>
+            <!--Arrow right-->
+            <li class="page-item">
+              <a href="#" class="page-link waves-effect" aria-label="Next">
+                <span aria-hidden="true">»</span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+            <!--First-->
+            <li class="page-item clearfix d-none d-md-block">
+              <a href="#" class="page-link waves-effect">
+                Last </a>
+            </li>
+          </ul>
+        </nav>
+        <!--/Pagination -->
+      </div>
+      <!--Bottom Table UI-->
+    </div>
+  </div>
+ 
+
 </div>
 
 {% endblock %}

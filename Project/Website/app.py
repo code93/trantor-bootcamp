@@ -4,6 +4,7 @@ import sqlite3
 from flask import Flask, redirect, render_template, request, url_for, flash, Response
 from flask_login import LoginManager,UserMixin, login_required, login_user, logout_user, current_user
 from models import UserModel,db,login
+from flask_socketio import SocketIO
 
 
 
@@ -19,6 +20,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 login.init_app(app)
 login.login_view = 'login'
+
+socketio = SocketIO(app)
  
 @app.before_first_request
 def create_all():
@@ -84,3 +87,35 @@ def Homepage():
 @app.route("/Contact")
 def Contact():
     return render_template("Contact.html")
+
+
+@app.route("/computer")
+@login_required
+def computer():
+    return render_template("computer.html")
+
+@app.route("/phone")
+@login_required
+def phone():
+    return render_template("phone.html")
+
+@app.route("/coffee")
+@login_required
+def coffee():
+    return render_template("coffee.html")
+
+
+
+def messageReceived(methods=['GET', 'POST']):
+    print('message was received!!!')
+
+@socketio.on('my event')
+def handle_my_custom_event(json, methods=['GET', 'POST']):
+    print('received my event: ' + str(json))
+    socketio.emit('my response', json, callback=messageReceived)
+
+if __name__ == '__main__':
+    socketio.run(app, debug=True)
+
+
+
