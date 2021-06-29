@@ -8,6 +8,7 @@ from flask_socketio import SocketIO
 
 
 
+
 app = Flask(__name__)
 app.debug = True
 
@@ -22,7 +23,8 @@ login.init_app(app)
 login.login_view = 'login'
 
 socketio = SocketIO(app)
- 
+
+
 @app.before_first_request
 def create_all():
     db.create_all()
@@ -31,6 +33,11 @@ def create_all():
 @login_required
 def blog():
     return render_template('dashboard.html')
+
+@app.route('/profile')
+@login_required
+def profile():
+    return render_template('profile.html')
  
  
 @app.route('/login', methods = ['POST', 'GET'])
@@ -118,4 +125,9 @@ if __name__ == '__main__':
     socketio.run(app, debug=True)
 
 
+
+@app.route('/create_post')
+@login_required
+def create_post():
+    render_template("create_post.html")
 
