@@ -1,11 +1,15 @@
 import os
 from re import UNICODE
 import sqlite3
+from os import abort
 from flask import Flask, redirect, render_template, request, url_for, flash, Response
 from flask_login import LoginManager,UserMixin, login_required, login_user, logout_user, current_user
-from models import UserModel,db,login
+from models import BlogPost, UserModel,db,login
 from flask_socketio import SocketIO
-
+from typing import Text
+from flask_wtf import FlaskForm
+from wtforms import StringField,SubmitField,TextAreaField
+from wtforms.validators import DataRequired
 
 
 
@@ -83,7 +87,7 @@ def logout():
 
 
 @app.route("/")
-def index():
+def Index():
     return render_template("Homepage.html")
 
 @app.route("/Homepage")
@@ -125,9 +129,33 @@ if __name__ == '__main__':
     socketio.run(app, debug=True)
 
 
+class BlogPostForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired()])
+    text = TextAreaField('Text', validators=[DataRequired()])
+    submit = SubmitField("Post")
 
-@app.route('/create_post')
+
+@app.route('/create', methods=['GET','POST'])
 @login_required
 def create_post():
-    render_template("create_post.html")
+    form = BlogPostForm()
 
+    if form.validate_on_submit():
+
+        blog_post = BlogPost(title=form.title.data,
+                             text=form.text.data,
+                             user_id=current_user.id
+                             )
+        db.session.add(blog_post)
+        db.session.commit()
+        flash('Blog Post Created')
+        return redirect(url_for('index'))
+
+    return render_template('create_post.html', form=form)
+
+
+
+@app.route('/index')
+@login_required
+def index():
+    return render_template('index.html')

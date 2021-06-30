@@ -1,9 +1,40 @@
 {% extends "layout.html" %}
 
-{% block body %}
 
-  
+{% block content %}
+<div class="jumbotron">
+    <h2>Written by:{{BlogPost.username}}</h2>
+    <p>{{BlogPost.text}}</p>
 
- 
-   
+    {% if username == current_user %}
+    <div>
+        <a href="{{url_for('create_post')}}">Update</a>
+        <button type="button" class="btn btn-danger" data-toggle='modal' data-target="#del_modal">Delete</button>
+    </div>
+    {% endif %}
+    
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="del_modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Delete Post?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete the post?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <form action="{{url_for('create_post')}}" method="post">
+            <input class="btn btn-danger" type="submit" name="" value="Delete">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 {% endblock %}
+

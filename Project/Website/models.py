@@ -31,10 +31,10 @@ class BlogPost(db.Model):
 
     id = db.Column(db.Integer,primary_key=True)
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'),nullable=False)
-
     date = db.Column(db.DateTime,nullable=False, default=datetime.utcnow)
     title = db.Column(db.String(140), nullable=False)
     text = db.Column(db.Text,nullable=False)
+    
 
 
  
