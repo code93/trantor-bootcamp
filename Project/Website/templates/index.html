@@ -3,8 +3,9 @@
 
 {% block content %}
 <div class="jumbotron">
-    <h2>Written by:{{BlogPost.username}}</h2>
-    <p>{{BlogPost.text}}</p>
+    <h2>Written by:{{username}}</h2>
+    <h2>Title: {{title}}</h2>
+    <p>{{text}}</p>
 
     {% if username == current_user %}
     <div>

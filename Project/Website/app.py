@@ -1,6 +1,8 @@
 import os
 from re import UNICODE
 import sqlite3
+from sqlalchemy import create_engine
+import pandas as pd
 from os import abort
 from flask import Flask, redirect, render_template, request, url_for, flash, Response
 from flask_login import LoginManager,UserMixin, login_required, login_user, logout_user, current_user
@@ -158,4 +160,6 @@ def create_post():
 @app.route('/index')
 @login_required
 def index():
-    return render_template('index.html')
+    cnx = create_engine('sqlite:///data.db').connect()
+    df = pd.read_sql_table('blogs', cnx)
+    return render_template('index.html', title=df.title,text=df.text)

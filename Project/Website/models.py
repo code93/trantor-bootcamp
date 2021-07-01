@@ -26,7 +26,8 @@ class UserModel(UserMixin, db.Model):
  
 
 class BlogPost(db.Model):
-    
+    __tablename__ = 'blogs'
+
     users = db.relationship(UserModel)
 
     id = db.Column(db.Integer,primary_key=True)
@@ -34,7 +35,7 @@ class BlogPost(db.Model):
     date = db.Column(db.DateTime,nullable=False, default=datetime.utcnow)
     title = db.Column(db.String(140), nullable=False)
     text = db.Column(db.Text,nullable=False)
-    
+    username = db.Column(db.Text)
 
 
  
