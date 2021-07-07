@@ -15,7 +15,7 @@
           Written by: <a href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
           <p class="text-muted">Published on: {{ post.date.strftime('%Y-%m-%d') }}</p>
           <br>
-            <p>{{post.text}}</p>
+            <p style="text-align: justify;">{{post.text}}</p>
           <br>
 
 {% endfor %}

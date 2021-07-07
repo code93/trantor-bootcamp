@@ -1,9 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="jumbotron">
-    <h1>Cyberspace Gateway Blogs</h1>
-    <p>Welcome to the Blog's Page</p>
-  </div>
 
   <div class="container">
 
@@ -15,11 +11,11 @@
       <div class="card-body">
 
 
-        <h2><a class="card-title" href="  {{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}">{{ post.title }}</a></h2>
-        <a href="{{ url_for('users.user_posts', username=post.author.username) }}">Written By: {{ post.author.username }}</a>
-        <p>Published on: {{ post.date.strftime('%Y-%m-%d') }}</p>
-        <p class="card-text">{{ post.text[:100] }}...</p>
-        <a href="{{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}" class="btn btn-primary">Read Blog Post</a>
+        <h2><a class="card-title" href="  {{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}" style="font-weight: bold;">{{ post.title }}</a></h2>
+        <a href="{{ url_for('users.user_posts', username=post.author.username) }}">written by: {{ post.author.username }}</a>
+        <p style="font-size: small;">{{ post.date.strftime('%Y-%m-%d') }}</p>
+        <p class="card-text" style="color: grey;">{{ post.text[:100] }}...</p>
+        <!-- <a href="{{ url_for('blog_posts.blog_post', blog_post_id=post.id) }}" class="btn btn-primary">Read Blog Post</a> -->
       </div>
     </div>
 

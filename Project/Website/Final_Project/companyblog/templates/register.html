@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<h2> Sign Up</h2>
 <div class="container pt-3">
     <form class="form-horizontal" method="POST">
 
@@ -21,6 +22,11 @@
     {{ form.submit(class="btn btn-default") }}
     </div>
 </form>
+<div class="container-fluid">
+    
+    <a class="btn btn-default" href="{{ url_for('users.login') }}">Back to LOGIN</a>
+
+</div>
 </div>
 
 {% endblock %}
