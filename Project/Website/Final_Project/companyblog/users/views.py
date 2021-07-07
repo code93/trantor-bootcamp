@@ -1,13 +1,17 @@
-from flask import render_template, url_for, flash, redirect, request, Blueprint
+from flask import render_template, url_for, flash, redirect, request, Blueprint,current_app
 from flask_login import login_user, current_user, logout_user, login_required
 from companyblog import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from companyblog.models import User, BlogPost
 from companyblog.users.forms import RegistrationForm, LoginForm, UpdateUserForm
 from companyblog.users.picture_handler import add_profile_pic
-
+import os
+from PIL import Image
+from companyblog.users.utils import pipeline_model
 
 users = Blueprint('users', __name__)
+
+UPLOAD_FOLDER = 'static/uploads'
 
 @users.route('/register', methods=['GET', 'POST'])
 def register():
@@ -96,3 +100,26 @@ def user_posts(username):
     user = User.query.filter_by(username=username).first_or_404()
     blog_posts = BlogPost.query.filter_by(author=user).order_by(BlogPost.date.desc()).paginate(page=page, per_page=5)
     return render_template('user_blog_posts.html', blog_posts=blog_posts, user=user)
+
+def getwidth(path):
+    img = Image.open(path)
+    size = img.size # width and height
+    aspect =  size[0] / size[1] # width / Height
+    w = 300 * aspect
+    return int(w)
+
+@users.route('/gender', methods=['GET', 'POST'])
+@login_required
+def gender():
+    if request.method == 'POST':
+        f = request.files['image']
+        filename = f.filename
+        path = os.path.join(current_app.root_path,UPLOAD_FOLDER,filename)
+        f.save(path)
+        # processing
+        w = getwidth(path)
+        # prediction (pass to pipeline model)
+        pipeline_model(path,filename=filename,color='bgr')
+        return render_template('gender.html',fileupload=True,img_name=filename,w=w)
+
+    return render_template('gender.html',fileupload=False,img_name="freeai.png",w="300")
