@@ -1,0 +1,24 @@
+.navbar {
+    background-color: white;
+    border-color: white;
+    color: black;
+}
+
+nav :hover {
+    color: black;
+}
+
+.navbar .navbar-nav .navbar-brand {
+    text-align: left;
+}
+
+a {
+    color: black;
+    font: bold;
+}
+
+a :hover {
+    color: black;
+    background-color: black;
+}
+

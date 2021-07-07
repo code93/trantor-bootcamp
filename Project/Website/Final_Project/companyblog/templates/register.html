@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h2> Sign Up</h2>
+<div class="container pt-3">
+    <form class="form-horizontal" method="POST">
+
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <span ><i class="glyphicon glyphicon-envelope"></i></span>  {{ form.email(placeholder="Email") }}<br>
+    </div>
+    <div class="form-group">
+        <span ><i class="glyphicon glyphicon-user"></i></span>  {{ form.username(placeholder="Username") }}<br>
+    </div>
+    <div class="form-group">
+        <span ><i class="glyphicon glyphicon-lock"></i></span>  {{ form.password(placeholder="Password") }}<br>
+    </div>
+    <div class="form-group">
+        <span ><i class="glyphicon glyphicon-lock"></i></span>  {{ form.pass_confirm(placeholder="Confirm Password") }}<br>
+    </div>
+    <div class="form-group">
+    {{ form.submit(class="btn btn-default") }}
+    </div>
+</form>
+<div class="container-fluid">
+    
+    <a class="btn btn-default" href="{{ url_for('users.login') }}">Back to LOGIN</a>
+
+</div>
+</div>
+
+{% endblock %}
