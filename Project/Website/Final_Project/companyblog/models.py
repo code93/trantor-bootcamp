@@ -1,3 +1,4 @@
+from sqlalchemy.sql.expression import null
 from companyblog import db,login_manager
 from datetime import datetime
 from werkzeug.security import generate_password_hash,check_password_hash
@@ -24,6 +25,7 @@ class User(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key = True)
     profile_image = db.Column(db.String(20), nullable=False, default='default_profile.png')
+    gender = db.Column(db.String(20),nullable=True, default='None')
     email = db.Column(db.String(64), unique=True, index=True)
     username = db.Column(db.String(64), unique=True, index=True)
     password_hash = db.Column(db.String(128))

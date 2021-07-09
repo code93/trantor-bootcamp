@@ -8,10 +8,12 @@ from companyblog.users.picture_handler import add_profile_pic
 import os
 from PIL import Image
 from companyblog.users.utils import pipeline_model
+import cv2
 
 users = Blueprint('users', __name__)
 
 UPLOAD_FOLDER = 'static/uploads'
+UPLOAD_FOLDER2 = 'static/profile_pics'
 
 @users.route('/register', methods=['GET', 'POST'])
 def register():
@@ -79,7 +81,15 @@ def account():
             username = current_user.username
             pic = add_profile_pic(form.picture.data,username)
             current_user.profile_image = pic
-
+            path = os.path.join(current_app.root_path,UPLOAD_FOLDER2,current_user.profile_image)
+            img, gender = pipeline_model(path,filename=current_user.profile_image,color='bgr')
+            gender_pre = ['Male','Female']
+            gender = gender_pre[gender]
+            current_user.gender = gender
+            db.session.commit()
+            return render_template('account.html', form=form, gender = gender)
+           
+        
         current_user.username = form.username.data
         current_user.email = form.email.data
         db.session.commit()
@@ -91,7 +101,8 @@ def account():
         form.email.data = current_user.email
 
     profile_image = url_for('static', filename='profile_pics/' + current_user.profile_image)
-    return render_template('account.html', profile_image=profile_image, form=form)
+    
+    return render_template('account.html', profile_image=profile_image, form=form,gender=current_user.gender)
 
 
 @users.route("/<username>")
@@ -119,7 +130,11 @@ def gender():
         # processing
         w = getwidth(path)
         # prediction (pass to pipeline model)
-        pipeline_model(path,filename=filename,color='bgr')
-        return render_template('gender.html',fileupload=True,img_name=filename,w=w)
+        img, gender = pipeline_model(path,filename=filename,color='bgr')
+        gender_pre = ['Male','Female']
+        gender = gender_pre[gender]
+        path = os.path.join(current_app.root_path,'static/predict/{}'.format(filename))
+        cv2.imwrite(path,img)
+        return render_template('gender.html',fileupload=True,img_name=filename,w=w, gender=gender)
 
     return render_template('gender.html',fileupload=False,img_name="freeai.png",w="300")

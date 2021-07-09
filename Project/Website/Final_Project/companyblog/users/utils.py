@@ -36,7 +36,7 @@ def pipeline_model(path,filename, color='bgr'):
     # step-3: crop the face (using haar cascade classifier)
     faces = haar.detectMultiScale(gray,1.5,3)
     for x,y,w,h in faces:
-        cv2.rectangle(img,(x,y),(x+w,y+h),(255,255,0),2) #drawing rectangle
+        cv2.rectangle(img,(x,y),(x+w,y+h),(255,255,0),1) #drawing rectangle
         roi = gray[y:y+h,x:x+w] #crop image
         # step 4: normalization
         roi = roi / 255.0
@@ -65,7 +65,8 @@ def pipeline_model(path,filename, color='bgr'):
         # step-11:
         text = "%s : %0.2f"%(gender_pre[predict],score)
         cv2.putText(img,text,(x,y),font,1,(255,255,0),2)
-    path = os.path.join(current_app.root_path,'static/predict/{}'.format(filename))
-    cv2.imwrite(path,img)
+    # path = os.path.join(current_app.root_path,'static/predict/{}'.format(filename))
+    # cv2.imwrite(path,img)
+    return img,predict
     
         
