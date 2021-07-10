@@ -2,10 +2,8 @@ from os import path
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import sklearn
 import pickle
 import cv2
-import os
 from flask import current_app
 
 
