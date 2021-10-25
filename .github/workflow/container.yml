@@ -7,5 +7,6 @@ jobs:
     steps:
       - name: Running Docker
         run: |
+          cd Project/Website/Final_Project
           docker build -t flask-docker .
           docker run flask-docker:latest
