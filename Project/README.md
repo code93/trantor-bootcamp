@@ -1,4 +1,4 @@
-# Requirements
+# Requirement
 1. Homepage
 2. Dashboard for Editing Portfolio
 3. Portfolio is something that contains About Me and Contact Info
