@@ -1,0 +1,11 @@
+name: Build and Push to Docker
+on: [push, pull_request]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Running Docker
+        run: |
+          docker build -t flask-docker .
+          docker run flask-docker:latest
